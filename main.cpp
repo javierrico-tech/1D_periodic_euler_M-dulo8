@@ -39,73 +39,125 @@ int main(int narg, char **argv)
   }
 
   // solution data
-  DataStruct<FLOATTYPE> u(numPoints), f(numPoints), xj(numPoints);
+  // DataStruct<FLOATTYPE> u(numPoints), f(numPoints), xj(numPoints);
+  
+  // 1. Variables físicas del fluido (Densidad, Momento, Energía)
+  DataStruct<FLOATTYPE> rho(numPoints);
+  DataStruct<FLOATTYPE> rho_u(numPoints);
+  DataStruct<FLOATTYPE> rho_E(numPoints);
 
+  // 2. Vectores de flujo correspondientes a cada variable
+  DataStruct<FLOATTYPE> f_rho(numPoints);
+  DataStruct<FLOATTYPE> f_rho_u(numPoints);
+  DataStruct<FLOATTYPE> f_rho_E(numPoints);
+
+  // 3. Puntos de la malla (esta se queda igual)
+  DataStruct<FLOATTYPE> xj(numPoints);
   // flux function
-  LinearFlux<FLOATTYPE> lf;
-
+  //LinearFlux<FLOATTYPE> lf;
+  FLOATTYPE L = 2.0 * M_PI; // Longitud del dominio
+  FLOATTYPE dx = L / numPoints;
   // time solver
-  RungeKutta4<FLOATTYPE> rk(u);
+  //RungeKutta4<FLOATTYPE> rk(u);
 
   // Initial Condition
-  FLOATTYPE *datax = xj.getData();
-  FLOATTYPE *dataU = u.getData();
-  for(int j = 0; j < numPoints; j++)
-  {
+  //FLOATTYPE *datax = xj.getData();
+  //FLOATTYPE *dataU = u.getData();
+  //for(int j = 0; j < numPoints; j++)
+  //{
     // xj
-    datax[j] = FLOATTYPE(j)/FLOATTYPE(numPoints-1);
+    //datax[j] = FLOATTYPE(j)/FLOATTYPE(numPoints-1);
 
     // init Uj
-    dataU[j] = sin(k*2. * M_PI * datax[j]);
+    //dataU[j] = sin(k*2. * M_PI * datax[j]);
+  //}
+
+  // Constante de los gases
+  FLOATTYPE gamma = 1.4;
+  //FLOATTYPE dx = L / numPoints;
+
+  for(int i=0; i<numPoints; i++)
+  {
+    // 1. Posición en la malla
+    xj[i] = i * dx; 
+
+    // 2. Definimos las variables físicas primitivas
+    // Aplicamos la perturbación sinusoidal en la densidad tal como pide el enunciado
+    FLOATTYPE densidad = 1.0 + 0.1 * sin(k * xj[i]); 
+    FLOATTYPE velocidad = 0.0; // Fluido inicialmente en reposo
+    FLOATTYPE presion = 1.0;   // Presión constante de referencia
+
+    // 3. Calculamos y guardamos las variables conservadas (las 3 ecuaciones de Euler)
+    rho[i]   = densidad;
+    rho_u[i] = densidad * velocidad;
+    
+    // Ecuación de estado para la energía: p = (gamma-1)*(rho_E - 0.5*rho*u^2)
+    rho_E[i] = (presion / (gamma - 1.0)) + 0.5 * densidad * velocidad * velocidad;
   }
+// 1. Instanciamos el operador espacial (le pasamos el tamaño de celda y el número de puntos)
+  EulerRHSoperator<FLOATTYPE> rhs_op(dx, numPoints);
+
+  // 2. Instanciamos nuestro nuevo motor temporal RK4
+  EulerRungeKutta4<FLOATTYPE> rk(numPoints, &rhs_op);
 
   DataStruct<FLOATTYPE> Uinit;
-  Uinit = u;
+  //Uinit = u;
 
   // Operator
-  Central1D<FLOATTYPE> rhs(u,xj,lf);
+  //Central1D<FLOATTYPE> rhs(u,xj,lf);
+  FLOATTYPE dt = 0.001; // Nuevo salto de tiempo fijo para Euler
 
   FLOATTYPE CFL = 2.4;
-  FLOATTYPE dt = CFL*datax[1];
+ // FLOATTYPE dt = CFL*datax[1];
 
   // Output Initial Condition
-  write2File(xj, u, "initialCondition.csv");
+  //write2File(xj, u, "initialCondition.csv");
 
   FLOATTYPE t_final = 1.;
   FLOATTYPE time = 0.;
-  DataStruct<FLOATTYPE> Ui(u.getSize()); // temp. data
+  //DataStruct<FLOATTYPE> Ui(u.getSize()); // temp. data
 
   // init timer
   double compTime = MPI_Wtime();
 
   // main loop
-  while(time < t_final)
-  {
-    if(time+dt >= t_final) dt = t_final - time;
+  //while(time < t_final)
+  //{
+    //if(time+dt >= t_final) dt = t_final - time;
 
     // take RK step
-    rk.initRK();
-    for(int s = 0; s < rk.getNumSteps(); s++)
-    {
-      rk.stepUi(dt);
-      Ui = *rk.currentU();
-      rhs.eval(Ui);
-      rk.setFi(rhs.ref2RHS());
-    }
-    rk.finalizeRK(dt);
+    //rk.initRK();
+    //for(int s = 0; s < rk.getNumSteps(); s++)
+    //{
+      //rk.stepUi(dt);
+      //Ui = *rk.currentU();
+      //rhs.eval(Ui);
+      //rk.setFi(rhs.ref2RHS());
+    //}
+    //rk.finalizeRK(dt);
+    //time += dt;
+  //}
+
+while(time < t_final)
+  {
+    if (time + dt >= t_final) dt = t_final - time;
+
+    // Nuestro nuevo integrador hace los 4 pasos del RK4 automáticamente en una sola línea
+    rk.takeStep(rho, rho_u, rho_E, dt);
+
     time += dt;
   }
 
   // finishe timer
   compTime = MPI_Wtime() - compTime;
 
-  write2File(xj, u, "final.csv");
+  //write2File(xj, u, "final.csv");
 
   // L2 norm
-  FLOATTYPE err = calcL2norm(Uinit, u);
+  //FLOATTYPE err = calcL2norm(Uinit, u);
   std::cout << std::setprecision(4) << "Comp. time: " << compTime;
-  std::cout << " sec. Error: " << err/k;
-  std::cout << " kdx: " << k*datax[1]*2.*M_PI;
+  //std::cout << " sec. Error: " << err/k;
+  //std::cout << " kdx: " << k*datax[1]*2.*M_PI;
   std::cout << std::endl;
 
   return 0;
@@ -133,16 +185,16 @@ void write2File(DataStruct<FLOATTYPE> &X, DataStruct<FLOATTYPE> &U, std::string 
   file.close();
 }
 
-FLOATTYPE calcL2norm(DataStruct<FLOATTYPE> &u, DataStruct<FLOATTYPE> &uinit)
-{
-  FLOATTYPE err = 0.;
-  const FLOATTYPE *dataU = u.getData();
-  const FLOATTYPE *dataInit = uinit.getData();
+//FLOATTYPE calcL2norm(DataStruct<FLOATTYPE> &u, DataStruct<FLOATTYPE> &uinit)
+//{
+  //FLOATTYPE err = 0.;
+  //const FLOATTYPE *dataU = u.getData();
+  //const FLOATTYPE *dataInit = uinit.getData();
 
-  for(int n = 0; n < u.getSize(); n++)
-  {
-    err += (dataU[n] - dataInit[n])*(dataU[n] - dataInit[n]);
-  }
+  //for(int n = 0; n < u.getSize(); n++)
+  //{
+    //err += (dataU[n] - dataInit[n])*(dataU[n] - dataInit[n]);
+  //}
 
-  return sqrt( err );
-}
+  //return sqrt( err );
+//}

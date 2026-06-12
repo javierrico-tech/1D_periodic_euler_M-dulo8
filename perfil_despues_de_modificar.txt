@@ -1,0 +1,436 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 32.69      0.09     0.09 142147000     0.00     0.00  DataStruct<float>::operator[](int)
+ 23.08      0.14     0.06                             _init
+ 19.23      0.20     0.05     1001    49.95   184.81  EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float)
+ 11.54      0.23     0.03     4004     7.49    23.85  EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&)
+  7.69      0.24     0.02     4004     5.00    10.97  EulerFlux<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&)
+  5.77      0.26     0.01                             DataStruct<float>::getData(int)
+  0.00      0.26     0.00     8008     0.00     0.00  DataStruct<float>::getSize()
+  0.00      0.26     0.00     3023     0.00     0.00  DataStruct<float>::~DataStruct()
+  0.00      0.26     0.00     3022     0.00     0.00  DataStruct<float>::DataStruct(int)
+  0.00      0.26     0.00     1000     0.00     0.00  std::sin(float)
+  0.00      0.26     0.00        8     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const
+  0.00      0.26     0.00        4     0.00     0.00  std::__new_allocator<char>::~__new_allocator()
+  0.00      0.26     0.00        3     0.00     0.00  std::char_traits<char>::assign(char&, char const&)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const
+  0.00      0.26     0.00        2     0.00     0.00  std::char_traits<char>::length(char const*)
+  0.00      0.26     0.00        2     0.00     0.00  std::__ptr_traits_ptr_to<char const*, char const, false>::pointer_to(char const&)
+  0.00      0.26     0.00        2     0.00     0.00  std::__ptr_traits_ptr_to<char*, char, false>::pointer_to(char&)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose()
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::~_Alloc_hider()
+  0.00      0.26     0.00        2     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data()
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long)
+  0.00      0.26     0.00        2     0.00     0.00  void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::_Guard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
+  0.00      0.26     0.00        2     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::~_Guard()
+  0.00      0.26     0.00        1     0.00     0.00  DataStruct<float>::DataStruct()
+  0.00      0.26     0.00        1     0.00     0.00  EulerRHSoperator<float>::EulerRHSoperator(float, int)
+  0.00      0.26     0.00        1     0.00     0.00  EulerRHSoperator<float>::~EulerRHSoperator()
+  0.00      0.26     0.00        1     0.00     0.00  EulerRungeKutta4<float>::EulerRungeKutta4(int, EulerRHSoperator<float>*)
+  0.00      0.26     0.00        1     0.00     0.00  EulerRungeKutta4<float>::~EulerRungeKutta4()
+  0.00      0.26     0.00        1     0.00     0.00  EulerFlux<float>::EulerFlux()
+  0.00      0.26     0.00        1     0.00     0.00  double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)
+  0.00      0.26     0.00        1     0.00     0.00  int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)
+  0.00      0.26     0.00        1     0.00     0.00  std::char_traits<char>::copy(char*, char const*, unsigned long)
+  0.00      0.26     0.00        1     0.00     0.00  std::__cxx11::stod(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*)
+  0.00      0.26     0.00        1     0.00     0.00  std::__cxx11::stoi(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*, int)
+  0.00      0.26     0.00        1     0.00     0.00  std::setprecision(int)
+  0.00      0.26     0.00        1     0.00     0.00  __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Range_chk::_S_chk(double, std::integral_constant<bool, false>)
+  0.00      0.26     0.00        1     0.00     0.00  __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::_Save_errno()
+  0.00      0.26     0.00        1     0.00     0.00  __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::~_Save_errno()
+  0.00      0.26     0.00        1     0.00     0.00  __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Range_chk::_S_chk(long, std::integral_constant<bool, true>)
+  0.00      0.26     0.00        1     0.00     0.00  __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::_Save_errno()
+  0.00      0.26     0.00        1     0.00     0.00  __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::~_Save_errno()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2026 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 3.85% of 0.26 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     71.2    0.00    0.18                 main [1]
+                0.05    0.13    1001/1001        EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [2]
+                0.00    0.00    5000/142147000     DataStruct<float>::operator[](int) [4]
+                0.00    0.00    1000/1000        std::sin(float) [17]
+                0.00    0.00       8/3023        DataStruct<float>::~DataStruct() [15]
+                0.00    0.00       7/3022        DataStruct<float>::DataStruct(int) [16]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [36]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [37]
+                0.00    0.00       2/4           std::__new_allocator<char>::~__new_allocator() [19]
+                0.00    0.00       1/1           std::__cxx11::stoi(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*, int) [50]
+                0.00    0.00       1/1           std::__cxx11::stod(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*) [49]
+                0.00    0.00       1/1           EulerRHSoperator<float>::EulerRHSoperator(float, int) [41]
+                0.00    0.00       1/1           EulerRungeKutta4<float>::EulerRungeKutta4(int, EulerRHSoperator<float>*) [43]
+                0.00    0.00       1/1           DataStruct<float>::DataStruct() [40]
+                0.00    0.00       1/1           std::setprecision(int) [51]
+                0.00    0.00       1/1           EulerRungeKutta4<float>::~EulerRungeKutta4() [44]
+                0.00    0.00       1/1           EulerRHSoperator<float>::~EulerRHSoperator() [42]
+-----------------------------------------------
+                0.05    0.13    1001/1001        main [1]
+[2]     71.2    0.05    0.13    1001         EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [2]
+                0.03    0.07    4004/4004        EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [3]
+                0.04    0.00 66066000/142147000     DataStruct<float>::operator[](int) [4]
+                0.00    0.00    3003/3022        DataStruct<float>::DataStruct(int) [16]
+                0.00    0.00    3003/3023        DataStruct<float>::~DataStruct() [15]
+-----------------------------------------------
+                0.03    0.07    4004/4004        EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [2]
+[3]     36.7    0.03    0.07    4004         EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [3]
+                0.02    0.02    4004/4004        EulerFlux<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [6]
+                0.02    0.00 36036000/142147000     DataStruct<float>::operator[](int) [4]
+                0.00    0.00    4004/8008        DataStruct<float>::getSize() [14]
+-----------------------------------------------
+                0.00    0.00    5000/142147000     main [1]
+                0.02    0.00 36036000/142147000     EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [3]
+                0.02    0.00 40040000/142147000     EulerFlux<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [6]
+                0.04    0.00 66066000/142147000     EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [2]
+[4]     32.7    0.09    0.00 142147000         DataStruct<float>::operator[](int) [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]     23.1    0.06    0.00                 _init [5]
+-----------------------------------------------
+                0.02    0.02    4004/4004        EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [3]
+[6]     16.9    0.02    0.02    4004         EulerFlux<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [6]
+                0.02    0.00 40040000/142147000     DataStruct<float>::operator[](int) [4]
+                0.00    0.00    4004/8008        DataStruct<float>::getSize() [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[7]      5.8    0.01    0.00                 DataStruct<float>::getData(int) [7]
+-----------------------------------------------
+                0.00    0.00    4004/8008        EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [3]
+                0.00    0.00    4004/8008        EulerFlux<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [6]
+[14]     0.0    0.00    0.00    8008         DataStruct<float>::getSize() [14]
+-----------------------------------------------
+                0.00    0.00       3/3023        EulerRHSoperator<float>::~EulerRHSoperator() [42]
+                0.00    0.00       8/3023        main [1]
+                0.00    0.00       9/3023        EulerRungeKutta4<float>::~EulerRungeKutta4() [44]
+                0.00    0.00    3003/3023        EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [2]
+[15]     0.0    0.00    0.00    3023         DataStruct<float>::~DataStruct() [15]
+-----------------------------------------------
+                0.00    0.00       3/3022        EulerRHSoperator<float>::EulerRHSoperator(float, int) [41]
+                0.00    0.00       7/3022        main [1]
+                0.00    0.00       9/3022        EulerRungeKutta4<float>::EulerRungeKutta4(int, EulerRHSoperator<float>*) [43]
+                0.00    0.00    3003/3022        EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [2]
+[16]     0.0    0.00    0.00    3022         DataStruct<float>::DataStruct(int) [16]
+-----------------------------------------------
+                0.00    0.00    1000/1000        main [1]
+[17]     0.0    0.00    0.00    1000         std::sin(float) [17]
+-----------------------------------------------
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [23]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [32]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [21]
+                0.00    0.00       2/8           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+[18]     0.0    0.00    0.00       8         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [18]
+-----------------------------------------------
+                0.00    0.00       2/4           main [1]
+                0.00    0.00       2/4           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::~_Alloc_hider() [29]
+[19]     0.0    0.00    0.00       4         std::__new_allocator<char>::~__new_allocator() [19]
+-----------------------------------------------
+                0.00    0.00       1/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [34]
+                0.00    0.00       2/3           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [32]
+[20]     0.0    0.00    0.00       3         std::char_traits<char>::assign(char&, char const&) [20]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [27]
+[21]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [21]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [18]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [22]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [21]
+[22]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [22]
+                0.00    0.00       2/2           std::__ptr_traits_ptr_to<char const*, char const, false>::pointer_to(char const&) [25]
+-----------------------------------------------
+                0.00    0.00       1/2           std::__cxx11::stoi(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*, int) [50]
+                0.00    0.00       1/2           std::__cxx11::stod(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*) [49]
+[23]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [23]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [18]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [36]
+[24]     0.0    0.00    0.00       2         std::char_traits<char>::length(char const*) [24]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [22]
+[25]     0.0    0.00    0.00       2         std::__ptr_traits_ptr_to<char const*, char const, false>::pointer_to(char const&) [25]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [31]
+[26]     0.0    0.00    0.00       2         std::__ptr_traits_ptr_to<char*, char, false>::pointer_to(char&) [26]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [37]
+[27]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [27]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [21]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [36]
+[28]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [28]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [37]
+[29]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::~_Alloc_hider() [29]
+                0.00    0.00       2/4           std::__new_allocator<char>::~__new_allocator() [19]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [36]
+[30]     0.0    0.00    0.00       2         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::_Guard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) [38]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [18]
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [33]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::~_Guard() [39]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [32]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [36]
+[31]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [31]
+                0.00    0.00       2/2           std::__ptr_traits_ptr_to<char*, char, false>::pointer_to(char&) [26]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+[32]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [32]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long) [35]
+                0.00    0.00       2/8           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [18]
+                0.00    0.00       2/3           std::char_traits<char>::assign(char&, char const&) [20]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+[33]     0.0    0.00    0.00       2         void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [33]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [34]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [33]
+[34]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [34]
+                0.00    0.00       1/3           std::char_traits<char>::assign(char&, char const&) [20]
+                0.00    0.00       1/1           std::char_traits<char>::copy(char*, char const*, unsigned long) [48]
+-----------------------------------------------
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [32]
+[35]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long) [35]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[36]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [36]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [31]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [28]
+                0.00    0.00       2/2           std::char_traits<char>::length(char const*) [24]
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+-----------------------------------------------
+                0.00    0.00       2/2           main [1]
+[37]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() [37]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [27]
+                0.00    0.00       2/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::~_Alloc_hider() [29]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+[38]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::_Guard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) [38]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [30]
+[39]     0.0    0.00    0.00       2         std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::~_Guard() [39]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[40]     0.0    0.00    0.00       1         DataStruct<float>::DataStruct() [40]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[41]     0.0    0.00    0.00       1         EulerRHSoperator<float>::EulerRHSoperator(float, int) [41]
+                0.00    0.00       3/3022        DataStruct<float>::DataStruct(int) [16]
+                0.00    0.00       1/1           EulerFlux<float>::EulerFlux() [45]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[42]     0.0    0.00    0.00       1         EulerRHSoperator<float>::~EulerRHSoperator() [42]
+                0.00    0.00       3/3023        DataStruct<float>::~DataStruct() [15]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[43]     0.0    0.00    0.00       1         EulerRungeKutta4<float>::EulerRungeKutta4(int, EulerRHSoperator<float>*) [43]
+                0.00    0.00       9/3022        DataStruct<float>::DataStruct(int) [16]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[44]     0.0    0.00    0.00       1         EulerRungeKutta4<float>::~EulerRungeKutta4() [44]
+                0.00    0.00       9/3023        DataStruct<float>::~DataStruct() [15]
+-----------------------------------------------
+                0.00    0.00       1/1           EulerRHSoperator<float>::EulerRHSoperator(float, int) [41]
+[45]     0.0    0.00    0.00       1         EulerFlux<float>::EulerFlux() [45]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::stod(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*) [49]
+[46]     0.0    0.00    0.00       1         double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [46]
+                0.00    0.00       1/1           __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::_Save_errno() [53]
+                0.00    0.00       1/1           __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Range_chk::_S_chk(double, std::integral_constant<bool, false>) [52]
+                0.00    0.00       1/1           __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::~_Save_errno() [54]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::stoi(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*, int) [50]
+[47]     0.0    0.00    0.00       1         int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [47]
+                0.00    0.00       1/1           __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::_Save_errno() [56]
+                0.00    0.00       1/1           __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Range_chk::_S_chk(long, std::integral_constant<bool, true>) [55]
+                0.00    0.00       1/1           __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::~_Save_errno() [57]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) [34]
+[48]     0.0    0.00    0.00       1         std::char_traits<char>::copy(char*, char const*, unsigned long) [48]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[49]     0.0    0.00    0.00       1         std::__cxx11::stod(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*) [49]
+                0.00    0.00       1/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [23]
+                0.00    0.00       1/1           double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [46]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[50]     0.0    0.00    0.00       1         std::__cxx11::stoi(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*, int) [50]
+                0.00    0.00       1/2           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [23]
+                0.00    0.00       1/1           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [47]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[51]     0.0    0.00    0.00       1         std::setprecision(int) [51]
+-----------------------------------------------
+                0.00    0.00       1/1           double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [46]
+[52]     0.0    0.00    0.00       1         __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Range_chk::_S_chk(double, std::integral_constant<bool, false>) [52]
+-----------------------------------------------
+                0.00    0.00       1/1           double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [46]
+[53]     0.0    0.00    0.00       1         __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::_Save_errno() [53]
+-----------------------------------------------
+                0.00    0.00       1/1           double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [46]
+[54]     0.0    0.00    0.00       1         __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::~_Save_errno() [54]
+-----------------------------------------------
+                0.00    0.00       1/1           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [47]
+[55]     0.0    0.00    0.00       1         __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Range_chk::_S_chk(long, std::integral_constant<bool, true>) [55]
+-----------------------------------------------
+                0.00    0.00       1/1           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [47]
+[56]     0.0    0.00    0.00       1         __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::_Save_errno() [56]
+-----------------------------------------------
+                0.00    0.00       1/1           int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [47]
+[57]     0.0    0.00    0.00       1         __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::~_Save_errno() [57]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2026 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [7] DataStruct<float>::getData(int) [22] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() const [35] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_length(unsigned long)
+  [14] DataStruct<float>::getSize() [23] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::c_str() const [36] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+  [40] DataStruct<float>::DataStruct() [18] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const [37] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()
+  [16] DataStruct<float>::DataStruct(int) [48] std::char_traits<char>::copy(char*, char const*, unsigned long) [49] std::__cxx11::stod(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*)
+  [15] DataStruct<float>::~DataStruct() [20] std::char_traits<char>::assign(char&, char const&) [50] std::__cxx11::stoi(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned long*, int)
+   [4] DataStruct<float>::operator[](int) [24] std::char_traits<char>::length(char const*) [51] std::setprecision(int)
+   [3] EulerRHSoperator<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [19] std::__new_allocator<char>::~__new_allocator() [17] std::sin(float)
+  [41] EulerRHSoperator<float>::EulerRHSoperator(float, int) [25] std::__ptr_traits_ptr_to<char const*, char const, false>::pointer_to(char const&) [52] __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Range_chk::_S_chk(double, std::integral_constant<bool, false>)
+  [42] EulerRHSoperator<float>::~EulerRHSoperator() [26] std::__ptr_traits_ptr_to<char*, char, false>::pointer_to(char&) [53] __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::_Save_errno()
+   [2] EulerRungeKutta4<float>::takeStep(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, float) [27] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() [54] __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*)::_Save_errno::~_Save_errno()
+  [43] EulerRungeKutta4<float>::EulerRungeKutta4(int, EulerRHSoperator<float>*) [28] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::_Alloc_hider(char*, std::allocator<char> const&) [55] __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Range_chk::_S_chk(long, std::integral_constant<bool, true>)
+  [44] EulerRungeKutta4<float>::~EulerRungeKutta4() [29] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider::~_Alloc_hider() [56] __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::_Save_errno()
+   [6] EulerFlux<float>::eval(DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&, DataStruct<float>&) [30] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) [57] __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int)::_Save_errno::~_Save_errno()
+  [45] EulerFlux<float>::EulerFlux() [31] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data() [38] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::_Guard(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*)
+  [46] double __gnu_cxx::__stoa<double, double, char>(double (*)(char const*, char**), char const*, char const*, unsigned long*) [32] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_set_length(unsigned long) [39] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)::_Guard::~_Guard()
+  [47] int __gnu_cxx::__stoa<long, int, char, int>(long (*)(char const*, char**, int), char const*, char const*, unsigned long*, int) [33] void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy_chars<char const*>(char*, char const*, char const*) [5] _init
+  [21] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const [34] std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long)

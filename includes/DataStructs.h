@@ -48,7 +48,10 @@ class DataStruct
     {
       return data[i];
     }
-
+    inline T& operator[](int i)
+    {
+      return data[i];
+    }
     void setSize(int _size);
 
     inline DataStruct<T>& operator=(DataStruct<T> &rhs)
